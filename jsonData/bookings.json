@@ -1,0 +1,50 @@
+{
+	"Bookings": [
+		{
+			"bookingId": 10031641,
+			"bookingUserEmail": "raghav@gmail.com",
+			"bookingUserName": "Raghav",
+			"originCity": "Mangalore",
+			"destinationCity": "Bangalore",
+			"flightNo": "AI765",
+			"flightId": 1,
+			"bookingDate": "2022-04-27",
+			"DepartureTime": "13:30 PM",
+			"ArrivalTime": "15:00 PM",
+			"passengerDetails": [
+				{
+					"name": "Ravi Kumar",
+					"gender": "male",
+					"age": "23",
+					"mealType": "Non-Veg",
+					"seatNo": "A5"
+				}
+			],
+			"ImageUrl": "https://content.airhex.com/content/logos/airlines_AI_350_100_r.png",
+			"ticketPrice": 10432
+		},
+		{
+			"bookingId": 10075435,
+			"bookingUserEmail": "raghav@gmail.com",
+			"bookingUserName": "Raghav",
+			"originCity": "Mangalore",
+			"destinationCity": "Bangalore",
+			"flightNo": "AI765",
+			"flightId": 1,
+			"bookingDate": "2022-04-27",
+			"DepartureTime": "13:30 PM",
+			"ArrivalTime": "15:00 PM",
+			"passengerDetails": [
+				{
+					"name": "Ravi Kumar",
+					"gender": "male",
+					"age": "21",
+					"mealType": "veg",
+					"seatNo": "a3"
+				}
+			],
+			"ImageUrl": "https://content.airhex.com/content/logos/airlines_AI_350_100_r.png",
+			"ticketPrice": 10432
+		}
+	]
+}
