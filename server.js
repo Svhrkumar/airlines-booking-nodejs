@@ -3,6 +3,8 @@ const mongoDB = require('mongoose');
 const airportsData = require('./Routers/airportsApi');
 const bookingDetails = require('./Routers/bookingApi');
 const flightDetails = require('./Routers/flightsApi');
+const cors = require('cors');
+
 require('dotenv').config();
 mongoDB
 	.connect(process.env.MONGODB_URL || 'mongodb://localhost/airlinebooking', {
@@ -15,6 +17,7 @@ mongoDB
 		process.exit(1);
 	});
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 4000;
