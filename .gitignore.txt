@@ -1,3 +1,2 @@
-# Dependency directories
+# dependencies
 node_modules/
-jspm_packages/
