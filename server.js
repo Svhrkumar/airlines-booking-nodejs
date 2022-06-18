@@ -4,6 +4,7 @@ const airportsData = require('./Routers/airportsApi');
 const bookingDetails = require('./Routers/bookingApi');
 const flightDetails = require('./Routers/flightsApi');
 const cors = require('cors');
+const airlineDetails = require('./Routers/airlinesApi');
 require('dotenv').config();
 mongoDB
 	.connect(process.env.MONGODB_URL || 'mongodb://localhost/airlinebooking', {
@@ -29,3 +30,4 @@ app.get('/', (req, res) => {
 app.use('/api/v1/', airportsData);
 app.use('/api/v1/', flightDetails);
 app.use('/api/v1/', bookingDetails);
+app.use('/api/v1/', airlineDetails);

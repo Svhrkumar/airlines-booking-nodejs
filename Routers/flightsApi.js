@@ -14,8 +14,9 @@ flightDetails.post(
 flightDetails.post(
 	'/flight',
 	expressAsyncHandler(async (req, res) => {
-		const { OriginCity, DestinationCity, DepartureDate } = req.body;
+		const { OriginCity, DestinationCity, DepartureDate, ReturnDate } = req.body;
 		console.log(req.body);
+
 		const fetchedDta = await flightsData.find({
 			OriginCity,
 			DestinationCity,

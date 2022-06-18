@@ -1,0 +1,29 @@
+{
+	"airlines": [
+		{
+			"label": "Air India",
+			"image": "https://content.airhex.com/content/logos/airlines_AI_350_100_r.png",
+			"id": 1
+		},
+		{
+			"label": "AirAsia",
+			"image": "https://content.airhex.com/content/logos/airlines_AWQ_350_100_r.png",
+			"id": 2
+		},
+		{
+			"label": "IndiGo",
+			"image": "https://content.airhex.com/content/logos/airlines_IGO_350_100_r.png",
+			"id": 3
+		},
+		{
+			"label": "SpiceJet",
+			"image": "https://content.airhex.com/content/logos/airlines_SG_350_100_r.png",
+			"id": 4
+		},
+		{
+			"label": "Vistara",
+			"image": "https://content.airhex.com/content/logos/airlines_SU_700_100_r.png",
+			"id": 5
+		}
+	]
+}
