@@ -4,7 +4,6 @@ const airportsData = require('./Routers/airportsApi');
 const bookingDetails = require('./Routers/bookingApi');
 const flightDetails = require('./Routers/flightsApi');
 const cors = require('cors');
-
 require('dotenv').config();
 mongoDB
 	.connect(process.env.MONGODB_URL || 'mongodb://localhost/airlinebooking', {

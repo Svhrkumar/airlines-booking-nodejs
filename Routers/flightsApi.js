@@ -15,11 +15,13 @@ flightDetails.post(
 	'/flight',
 	expressAsyncHandler(async (req, res) => {
 		const { OriginCity, DestinationCity, DepartureDate } = req.body;
-		const fetchedDta = await flightsData.findOne({
+		console.log(req.body);
+		const fetchedDta = await flightsData.find({
 			OriginCity,
 			DestinationCity,
 			DepartureDate,
 		});
+		console.log(fetchedDta);
 		res.send(fetchedDta);
 	})
 );
