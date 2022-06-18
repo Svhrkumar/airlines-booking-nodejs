@@ -89,17 +89,28 @@ flightDetails.put(
 flightDetails.post(
 	'/flight/bookings/',
 	expressAsyncHandler(async (req, res) => {
-		const { flightId, flightCode } = req.body;
+		const { flightId, flightCode, bookedPassengers } = req.body;
 
-		const getFlight = await flightBookingsData.findOne({ flightCode });
-		// console.log(getFlight);
-		const { bookedPassengers } = getFlight;
-		const bookedData = await flightBookingsData.insertMany({
+		const bookedData = await flightBookingsData.create({
 			flightId,
 			flightCode,
 			bookedPassengers,
 		});
 		// console.log('stored', bookedData);
+
+		res.send(bookedData);
+	})
+);
+
+flightDetails.get(
+	'/flight/getbookings/:id',
+	expressAsyncHandler(async (req, res) => {
+		const ID = req.params.id;
+		console.log(ID);
+		const bookedData = await flightBookingsData.find({
+			flightId: ID,
+		});
+		console.log('stored', bookedData);
 
 		res.send(bookedData);
 	})
