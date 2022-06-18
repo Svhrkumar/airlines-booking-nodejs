@@ -13,7 +13,7 @@ bookingDetails.post(
 );
 
 bookingDetails.post(
-	'/booking/flight',
+	'/booking/userflight',
 	expressAsyncHandler(async (req, res) => {
 		const {
 			bookingId,
