@@ -48,6 +48,44 @@ bookingDetails.post(
 		res.send(created);
 	})
 );
+
+bookingDetails.post(
+	'/userbooking',
+	expressAsyncHandler(async (req, res) => {
+		const {
+			bookingId,
+			bookingUserEmail,
+			bookingUserName,
+			originCity,
+			destinationCity,
+			flightNo,
+			flightId,
+			bookingDate,
+			DepartureTime,
+			ArrivalTime,
+			passengerDetails,
+			ImageUrl,
+			ticketPrice,
+		} = req.body;
+		const created = await bookingsData.create({
+			bookingId,
+			bookingUserEmail,
+			bookingUserName,
+			originCity,
+			destinationCity,
+			flightNo,
+			flightId,
+			bookingDate,
+			DepartureTime,
+			ArrivalTime,
+			passengerDetails,
+			ImageUrl,
+			ticketPrice,
+		});
+		res.send(created);
+	})
+);
+
 bookingDetails.post(
 	'/bookinghistory/flight',
 	expressAsyncHandler(async (req, res) => {
