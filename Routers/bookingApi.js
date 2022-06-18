@@ -52,6 +52,8 @@ bookingDetails.post(
 bookingDetails.post(
 	'/userbooking',
 	expressAsyncHandler(async (req, res) => {
+		const data = req.body;
+		const jsonData = JSON.parse(data);
 		const {
 			bookingId,
 			bookingUserEmail,
@@ -66,7 +68,7 @@ bookingDetails.post(
 			passengerDetails,
 			ImageUrl,
 			ticketPrice,
-		} = req.body;
+		} = jsonData;
 		const created = await bookingsData.create({
 			bookingId,
 			bookingUserEmail,
