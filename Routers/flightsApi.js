@@ -3,6 +3,7 @@ const expressAsyncHandler = require('express-async-handler');
 const flightDetails = express.Router();
 const flightData = require('../jsonData/flights.json');
 const flightsData = require('../schemas/flightsSchema');
+const flightBookingsData = require('../schemas/flightBookings');
 flightDetails.post(
 	'/flightseed',
 	expressAsyncHandler(async (req, res) => {
@@ -76,12 +77,31 @@ flightDetails.put(
 		const { _id } = req.body;
 		let requestData = req.body;
 		const findFlight = await flightsData.find({ _id });
-		// console.log('Find flight to update', findFlight);
+		console.log('Find flight to update', findFlight);
 		let flightData = findFlight.find((obj) => obj._id == _id);
 
 		flightData = requestData;
 		const flightUpdated = await flightsData.updateOne({ _id }, flightData);
 		res.send(flightUpdated);
+	})
+);
+
+flightDetails.post(
+	'/flight/bookings/',
+	expressAsyncHandler(async (req, res) => {
+		const { flightId, flightCode } = req.body;
+
+		const getFlight = await flightBookingsData.findOne({ flightCode });
+		// console.log(getFlight);
+		const { bookedPassengers } = getFlight;
+		const bookedData = await flightBookingsData.insertMany({
+			flightId,
+			flightCode,
+			bookedPassengers,
+		});
+		// console.log('stored', bookedData);
+
+		res.send(bookedData);
 	})
 );
 flightDetails.delete(
