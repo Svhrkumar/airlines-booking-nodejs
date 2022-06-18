@@ -14,4 +14,12 @@ airlineDetails.post(
 	})
 );
 
+airlineDetails.get(
+	'/airlines',
+	expressAsyncHandler(async (req, res) => {
+		const fetchAirline = await airlinesData.find();
+		res.send(fetchAirline);
+	})
+);
+
 module.exports = airlineDetails;
