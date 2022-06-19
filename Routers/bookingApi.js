@@ -85,7 +85,7 @@ bookingDetails.post(
 			ticketPrice,
 		});
 		res.setHeader('Content-Type', 'application/json');
-		res.send({ message: 'created' });
+		res.send(created);
 	})
 );
 
