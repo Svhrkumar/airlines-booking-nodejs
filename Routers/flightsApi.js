@@ -82,7 +82,8 @@ flightDetails.put(
 
 		flightData = requestData;
 		const flightUpdated = await flightsData.updateOne({ _id }, flightData);
-		res.send(flightUpdated);
+		const fetchedDta = await flightsData.find();
+		res.send(fetchedDta);
 	})
 );
 
