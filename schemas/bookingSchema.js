@@ -6,7 +6,7 @@ const bookingsData = mongoDB.Schema({
 	originCity: { type: String, default: null },
 	destinationCity: { type: String, default: null },
 	flightNo: { type: String, default: null },
-	flightId: { type: Number, default: null },
+	flightId: { type: String, default: null },
 	bookingDate: { type: String, default: null },
 	DepartureTime: { type: String, default: null },
 	ArrivalTime: { type: String, default: null },

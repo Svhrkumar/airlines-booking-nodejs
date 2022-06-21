@@ -4,7 +4,8 @@ const airportsData = require('./Routers/airportsApi');
 const bookingDetails = require('./Routers/bookingApi');
 const flightDetails = require('./Routers/flightsApi');
 const cors = require('cors');
-
+const airlineDetails = require('./Routers/airlinesApi');
+require('dotenv').config();
 mongoDB
 	.connect(process.env.MONGODB_URL || 'mongodb://localhost/airlinebooking', {
 		useNewUrlParser: true,
@@ -19,7 +20,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 3000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, (res) => {
 	console.log(`server is connected ${PORT}`);
 });
@@ -29,3 +30,4 @@ app.get('/', (req, res) => {
 app.use('/api/v1/', airportsData);
 app.use('/api/v1/', flightDetails);
 app.use('/api/v1/', bookingDetails);
+app.use('/api/v1/', airlineDetails);

@@ -13,7 +13,7 @@ bookingDetails.post(
 );
 
 bookingDetails.post(
-	'/booking/flight',
+	'/booking/userflight',
 	expressAsyncHandler(async (req, res) => {
 		const {
 			bookingId,
@@ -48,6 +48,47 @@ bookingDetails.post(
 		res.send(created);
 	})
 );
+
+bookingDetails.post(
+	'/userbooking',
+	expressAsyncHandler(async (req, res) => {
+		const data = req.body;
+
+		const {
+			bookingId,
+			bookingUserEmail,
+			bookingUserName,
+			originCity,
+			destinationCity,
+			flightNo,
+			flightId,
+			bookingDate,
+			DepartureTime,
+			ArrivalTime,
+			passengerDetails,
+			ImageUrl,
+			ticketPrice,
+		} = req.body;
+		const created = await bookingsData.create({
+			bookingId,
+			bookingUserEmail,
+			bookingUserName,
+			originCity,
+			destinationCity,
+			flightNo,
+			flightId,
+			bookingDate,
+			DepartureTime,
+			ArrivalTime,
+			passengerDetails,
+			ImageUrl,
+			ticketPrice,
+		});
+		res.setHeader('Content-Type', 'application/json');
+		res.send(created);
+	})
+);
+
 bookingDetails.post(
 	'/bookinghistory/flight',
 	expressAsyncHandler(async (req, res) => {
